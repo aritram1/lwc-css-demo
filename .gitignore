@@ -11,7 +11,7 @@ logs
 /lib
 
 # Standard dist folder
-/dist
+# /dist
 
 # Tooling files
 node_modules
