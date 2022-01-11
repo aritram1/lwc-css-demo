@@ -9,10 +9,10 @@
                     <lightning-button variant="brand" label="Start" title="Start" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>            
                 </template>
                 <template if:true={hide}>
-                    <lightning-button variant="brand" label="Hide" title="Hide" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
+                    <lightning-button variant="brand" label="Show" title="Show" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
                 </template>
                 <template if:false={hide}>
-                    <lightning-button variant="brand" label="Show" title="Show" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
+                    <lightning-button variant="brand" label="Hide" title="Hide" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
                 </template>
             </lightning-button-group>
         </div>
