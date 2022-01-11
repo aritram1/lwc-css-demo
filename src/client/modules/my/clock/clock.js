@@ -47,8 +47,8 @@ export default class Clock extends LightningElement {
         switch(current){
             case 'Hide':
                 this.showHide = 'Show'; break;
-            case 'Start':
-                this.showHide = 'Hdide'; break;
+            case 'Show':
+                this.showHide = 'Hide'; break;
             default:
                 break;
         }
