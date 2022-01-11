@@ -1,0 +1,46 @@
+<template>
+    <div class="container">
+        <div class="slds-align_absolute-center btngrp">
+            <lightning-button-group>
+                <template if:true={running}>
+                    <lightning-button variant="brand" label="Stop" title="Stop" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>            
+                </template>
+                <template if:false={running}>
+                    <lightning-button variant="brand" label="Start" title="Start" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>            
+                </template>
+                <template if:true={hide}>
+                    <lightning-button variant="brand" label="Hide" title="Hide" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
+                </template>
+                <template if:false={hide}>
+                    <lightning-button variant="brand" label="Show" title="Show" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
+                </template>
+            </lightning-button-group>
+        </div>
+        <div class="clock">
+            <div class="hands slds-align_absolute-center">
+                <div class="second slds-grid">
+                    <div class="second-left slds-col slds-size_7-of-12"></div>
+                    <div class="second-dot slds-col slds-size_1-of-12"></div>
+                    <div class="second-right slds-col slds-size_4-of-12"></div>
+                </div>
+                <div class="min slds-grid">
+                    <div class="min-left slds-col slds-size_8-of-12"></div>
+                    <div class="min-dot slds-col slds-size_1-of-12"></div>
+                    <div class="min-right slds-col slds-size_3-of-12"></div>
+                </div>
+                <div class="hour slds-grid">
+                    <div class="hour-left slds-col slds-size_8-of-12"></div>
+                    <div class="hour-dot slds-col slds-size_1-of-12"></div>
+                    <div class="hour-right slds-col slds-size_3-of-12"></div>
+                </div>
+            </div>
+            
+            <div class="dial">
+                <template if:false={hide}>
+                    <img src="../../../resources/dial.jpg"/>
+                </template>
+            </div>
+            
+        </div>
+    </div>
+</template>

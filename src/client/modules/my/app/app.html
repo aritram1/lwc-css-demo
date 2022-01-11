@@ -1,5 +1,21 @@
 <template>
-    <my-daytracker></my-daytracker>
-
-    
+    <div class="container slds-box slds-m-around_large"> <!-- slds-align_absolute-center -->
+        <lightning-tabset active-tab-value="one" onactive={handlepParentActive}>
+            <lightning-tab label="Clock" title="Clock" value="one" onactive={handleActive}>
+                <my-clock></my-clock>                
+            </lightning-tab>
+            
+            <!--
+            <lightning-tab label="First Version" title="First Version" value="one" onactive={handleActive}>
+                <my-daytracker></my-daytracker>
+            </lightning-tab>
+            <lightning-tab label="Second Version" title="Second Version" value="two" onactive={handleActive}>
+                <my-daytracker2></my-daytracker2>
+            </lightning-tab>
+            <lightning-tab label="Fourth Version" title="Expense App" value="four" onactive={handleActive}>
+                Expense app
+            </lightning-tab>
+            -->
+        </lightning-tabset>
+    </div>
 </template>

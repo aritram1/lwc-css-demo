@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+.white{
+    background-color: white;
+}
+
+.grey{
+    background-color: grey;
+}
+
+.blue{
+    background-color: rgb(125, 65, 182); /* rgb(138, 43, 226) */
+}
+
+.time{
+    width: 60%;
+}
+
+
+
+/* "blue slds-grid slds-gutters  slds-m-around_large slds-text-heading_small" */

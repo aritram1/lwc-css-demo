@@ -4,6 +4,7 @@
     "author": "aritram1",
     "bugs": "https://github.com/aritram1/lwcoss-day-tracker/issues",
     "dependencies": {
+        "@lwc/synthetic-shadow": "^2.5.2",
         "compression": "^1.7.4",
         "express": "^4.17.1",
         "helmet": "^4.6.0",

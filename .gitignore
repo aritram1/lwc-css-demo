@@ -1,3 +1,6 @@
+#VS Code Cache
+.vscode/
+
 # Log files
 logs
 *.log
