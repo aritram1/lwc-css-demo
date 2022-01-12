@@ -3,15 +3,15 @@
     --g-mid : #72a6e9;
     --g-end: #c2f0b7;
     --container-h:540px;
-    --container-w:420px;
+    --container-w:422px;
     --color-second-l: grey;
-    --color-second-d: none;
+    --color-second-d: grey;
     --color-second-r: none;
     --color-min-l: grey;
-    --color-min-d: none;
+    --color-min-d: grey;
     --color-min-r: none;
     --color-hour-l: grey;
-    --color-hour-d: none;
+    --color-hour-d: grey;
     --color-hour-r: none;
 }
 
@@ -21,6 +21,7 @@
 }
 
 .container{
+    position: relative;
     z-index: 2;
     display: grid;
     justify-content: center;
@@ -43,16 +44,17 @@
     height: 360px;
     width: 360px;
     z-index: 4;
+    left: 14px;
+    top: 0px;
 }
 
 .hour-hand{
-    position: absolute;
-    z-index: 20;
+    position: relative;
     background-color: none;
     height: 120px;
-    width:4px;
-    left: 221px;
-    top: 206px;
+    width:5px;
+    left: -188px;
+    top: 0px;
     display: grid;
     grid-template-rows: 7fr 1fr 4fr;
     transform : rotate(0deg);
@@ -70,13 +72,13 @@
 }
 
 .min-hand{
-    position: absolute;
+    position: relative;
     z-index: 8;
     background-color: none;
-    height: 190px;
+    height: 185px;
     width:4px;
-    left: 221px;
-    top: 172px;
+    left: -184px;
+    top: 0px;
     display: grid;
     grid-template-rows: 7fr 1fr 4fr;
     transform : rotate(0deg);
@@ -93,13 +95,13 @@
 }
 
 .second-hand{
-    position: absolute;
+    position: relative;
     z-index: 10;
     background-color: none;
     height: 250px;
     width:3px;
-    left: 221px;
-    top: 141px;
+    left: -179px;
+    top: 0px;
     display: grid;
     grid-template-rows: 7fr 1fr 4fr;
     transform : rotate(0deg);
@@ -120,12 +122,12 @@
     height: 15px;
     width: 15px;
     background-color: grey;
-    /* border: 1px solid red; */
-    position: absolute;
+    /* border: 2px solid red; */
+    position: relative;
     z-index: 300;
     border-radius: 100%;
-    top: 258px;
-    left: 215px;
+    top: 0px;
+    left: -171px;
     z-index: 12;
 }
 

@@ -21,13 +21,14 @@ export default class Clock extends LightningElement {
                 let rotateS = now.getSeconds() * 6;
                 let rotateM = now.getMinutes() * 6;
                 let rotateH = now.getHours() * 30;
-                console.log(rotateH);
                 this.template.querySelector('div.second-hand').style.transform = `rotate(${rotateS}deg)`;
                 this.template.querySelector('div.min-hand').style.transform = `rotate(${rotateM}deg)`;
                 this.template.querySelector('div.hour-hand').style.transform = `rotate(${rotateH}deg)`;
-                this.time.h = now.getHours() === 0 ? 12 : now.getHours() < 12 ? now.getHours() : now.getHours() -12;
-                this.time.m = now.getMinutes();
-                this.time.s = now.getSeconds();
+
+                this.time.h = now.getHours() === 0 ? 12 : now.getHours() < 12 ? now.getHours() : now.getHours() - 12;
+                if(now.getHours() < 10) this.time.h = '0' + now.getHours();
+                this.time.m = now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
+                this.time.s = now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds();
                 this.time.ampm = now.getHours() < 12 ? 'AM' : 'PM';            
             }, 1000);
         }
