@@ -32,7 +32,7 @@ export default class Clock extends LightningElement {
                 this.time.s = now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds();
                 this.time.ampm = now.getHours() < 12 ? 'AM' : 'PM';            
             }, 1000);
-        }
+        } 
     }
 
     stop(){
