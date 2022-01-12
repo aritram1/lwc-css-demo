@@ -1,8 +1,9 @@
-import { LightningElement, api} from 'lwc';
+import { LightningElement, track, api} from 'lwc';
 export default class Clock extends LightningElement {
     timerId;
     hide = false;
     running = false;
+    @track time = {};
     @api tz; @api offset; //TBD 
     connectedCallback(){
         this.start();
@@ -17,12 +18,17 @@ export default class Clock extends LightningElement {
             this.running = true;
             this.timerId = setInterval(()=>{
                 let now = new Date();
-                let h = now.getHours() * 15 + 90;
-                let m = now.getMinutes() * 6 + 90;
-                let s = now.getSeconds() * 6  + 90;
-                this.template.querySelector('div.second').style.transform = `rotate(${s}deg)`;
-                this.template.querySelector('div.min').style.transform = `rotate(${m}deg)`;
-                this.template.querySelector('div.hour').style.transform = `rotate(${h}deg)`;
+                let rotateS = now.getSeconds() * 6;
+                let rotateM = now.getMinutes() * 6;
+                let rotateH = now.getHours() * 30;
+                console.log(rotateH);
+                this.template.querySelector('div.second-hand').style.transform = `rotate(${rotateS}deg)`;
+                this.template.querySelector('div.min-hand').style.transform = `rotate(${rotateM}deg)`;
+                this.template.querySelector('div.hour-hand').style.transform = `rotate(${rotateH}deg)`;
+                this.time.h = now.getHours() === 0 ? 12 : now.getHours() < 12 ? now.getHours() : now.getHours() -12;
+                this.time.m = now.getMinutes();
+                this.time.s = now.getSeconds();
+                this.time.ampm = now.getHours() < 12 ? 'AM' : 'PM';            
             }, 1000);
         }
     }
@@ -39,6 +45,7 @@ export default class Clock extends LightningElement {
         if(this.running) this.stop();
         else this.start();
         console.log(this.running);
+        console.log(this.time.h);
     }
 
     handleHideShow(event){

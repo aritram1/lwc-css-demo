@@ -1,12 +1,12 @@
 <template>
-    <div class="container">
-        <div class="slds-align_absolute-center btngrp">
+    <div class="container slds-align_absolute-center">
+        <div class="btngrp slds-align_absolute-center">
             <lightning-button-group>
                 <template if:true={running}>
-                    <lightning-button variant="brand" label="Stop" title="Stop" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>            
+                    <lightning-button variant="brand" label="Stop" title="Stop" onclick={handleClick} class="slds-m-around_small"></lightning-button>            
                 </template>
                 <template if:false={running}>
-                    <lightning-button variant="brand" label="Start" title="Start" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>            
+                    <lightning-button variant="brand" label="Start" title="Start" onclick={handleClick} class="slds-m-around_small"></lightning-button>            
                 </template>
                 <template if:true={hide}>
                     <lightning-button variant="brand" label="Show" title="Show" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
@@ -16,31 +16,35 @@
                 </template>
             </lightning-button-group>
         </div>
-        <div class="clock">
-            <div class="hands slds-align_absolute-center">
-                <div class="second slds-grid">
-                    <div class="second-left slds-col slds-size_7-of-12"></div>
-                    <div class="second-dot slds-col slds-size_1-of-12"></div>
-                    <div class="second-right slds-col slds-size_4-of-12"></div>
-                </div>
-                <div class="min slds-grid">
-                    <div class="min-left slds-col slds-size_8-of-12"></div>
-                    <div class="min-dot slds-col slds-size_1-of-12"></div>
-                    <div class="min-right slds-col slds-size_3-of-12"></div>
-                </div>
-                <div class="hour slds-grid">
-                    <div class="hour-left slds-col slds-size_8-of-12"></div>
-                    <div class="hour-dot slds-col slds-size_1-of-12"></div>
-                    <div class="hour-right slds-col slds-size_3-of-12"></div>
-                </div>
-            </div>
-            
+        <div class="clock slds-align_absolute-center">
             <div class="dial">
                 <template if:false={hide}>
                     <img src="./resources/dial.jpg"/>
                 </template>
             </div>
+            <div class="center"></div>
+            <div class="second-hand">
+                <div class="second-hand-l"></div>
+                <div class="second-hand-dot"></div>
+                <div class="second-hand-r"></div>
+            </div>
+            <div class="min-hand">
+                <div class="min-hand-l"></div>
+                <div class="min-hand-dot"></div>
+                <div class="min-hand-r"></div>
+            </div>
+            <div class="hour-hand">
+                <div class="hour-hand-l"></div>
+                <div class="hour-hand-dot"></div>
+                <div class="hour-hand-r"></div>
+            </div>
             
+        </div>
+        <div class="time slds-grid slds-align_absolute-center">
+            <div class="hour">{time.h}</div>
+            <div class="min">{time.m}</div>
+            <div class="second">{time.s}</div>
+            <div class="ampm">{time.ampm}</div>
         </div>
     </div>
 </template>
