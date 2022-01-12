@@ -18,9 +18,10 @@ export default class Clock extends LightningElement {
             this.running = true;
             this.timerId = setInterval(()=>{
                 let now = new Date();
-                let rotateS = now.getSeconds() * 6;
-                let rotateM = now.getMinutes() * 6;
-                let rotateH = now.getHours() * 30;
+                let rotateS = 6 * now.getSeconds();
+                let rotateM = 6 * (now.getMinutes() + now.getSeconds()/60);
+                let rotateH = 30 * (now.getHours() + (now.getMinutes()/60));
+                
                 this.template.querySelector('div.second-hand').style.transform = `rotate(${rotateS}deg)`;
                 this.template.querySelector('div.min-hand').style.transform = `rotate(${rotateM}deg)`;
                 this.template.querySelector('div.hour-hand').style.transform = `rotate(${rotateH}deg)`;
