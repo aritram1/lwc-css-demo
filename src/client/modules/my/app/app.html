@@ -1,21 +1,34 @@
 <template>
-    <div class="container slds-box slds-m-around_small"> <!-- slds-align_absolute-center -->
-        <lightning-tabset active-tab-value="one" onactive={handlepParentActive}>
-            <lightning-tab label="Clock" title="Clock" value="one" onactive={handleActive}>
-                <my-clock></my-clock>                
-            </lightning-tab>
-            
-            <!--
-            <lightning-tab label="First Version" title="First Version" value="one" onactive={handleActive}>
-                <my-daytracker></my-daytracker>
-            </lightning-tab>
-            <lightning-tab label="Second Version" title="Second Version" value="two" onactive={handleActive}>
-                <my-daytracker2></my-daytracker2>
-            </lightning-tab>
-            <lightning-tab label="Fourth Version" title="Expense App" value="four" onactive={handleActive}>
-                Expense app
-            </lightning-tab>
-            -->
-        </lightning-tabset>
-    </div>
+   <div class="app">
+      <lightning-tabset active-tab-value="two">
+         <lightning-tab
+            label="Clock"
+            title="Clock"
+            value="one"
+            onactive={handleActive}
+         >
+            <div class="clock">
+               <my-clock></my-clock>
+            </div>
+         </lightning-tab>
+
+         <lightning-tab
+            label="KB Key"
+            title="KB Key"
+            value="two"
+            onactive={handleActive}
+         >
+            <my-kbkey></my-kbkey>
+         </lightning-tab>
+
+         <lightning-tab
+            label="Sea View"
+            title="Sea View"
+            value="three"
+            onactive={handleActive}
+         >
+            <!-- <my-seaview></my-seaview> -->
+         </lightning-tab>
+      </lightning-tabset>
+   </div>
 </template>

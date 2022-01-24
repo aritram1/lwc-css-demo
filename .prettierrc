@@ -1,11 +1,27 @@
 {
-    "trailingComma": "none",
-    "singleQuote": true,
-    "tabWidth": 4,
-    "overrides": [
-        {
-            "files": "**/*.html",
-            "options": { "parser": "lwc" }
-        }
-    ]
+   "tabWidth": 3,
+   "useTab": false,
+   "semi": true,
+
+   "overrides": [
+      {
+         "files": "*.js",
+         "options": {
+            "singleQuote": true
+         }
+      },
+      {
+         "files": "*.html",
+         "options": {
+            "parser": "lwc"
+         }
+      },
+      {
+         "files": "*.css",
+         "options": {
+            "parser": "css",
+            "tabWidth": 2
+         }
+      }
+   ]
 }

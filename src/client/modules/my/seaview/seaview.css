@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  --size: 40px;
+  --bg: linear-gradient(
+    135deg,
+    lightgrey 1%,
+    #d0d0d0 6%,
+    silver 35%,
+    lightgrey 90%,
+    silver 98%
+  );
+  --color-top: lightgrey;
+  --color-right: #a8a8a8;
+  --color-bottom: silver;
+  --color-left: gainsbor;
+}
+
+.container {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.center {
+  text-align: center;
+  line-height: 120px;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+.triangle {
+  position: relative;
+  top: 40px;
+  height: 200px;
+  width: 200px;
+  margin: 20px auto;
+  background: var(--bg);
+  border-radius: 20px;
+  border-top: var(--size) solid var(--color-top);
+  border-right: var(--size) solid var(--color-right);
+  border-bottom: var(--size) solid var(--color-bottom);
+  border-left: var(--size) solid var(--color-left);
+  box-shadow: 15px 15px 20px 0 #333, 35px 15px 200px 0 seagreen,
+    15px 20px 40px 0 blue, -40px -25px 50px 0 lightgrey;
+}

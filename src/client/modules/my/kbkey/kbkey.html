@@ -1,0 +1,18 @@
+<template>
+   <div class="slds-align_absolute-center">
+      <lightning-button
+         variant="brand"
+         label="Show All"
+         title="Show All"
+         onclick={handleClick}
+         class="btn"
+      ></lightning-button>
+   </div>
+
+   <div class="container slds-grid">
+      <div class="kb center hide">ctrl</div>
+      <div class="kb center">alt</div>
+      <div class="kb center hide">del</div>
+   </div>
+   <div class="footer">{source}</div>
+</template>
