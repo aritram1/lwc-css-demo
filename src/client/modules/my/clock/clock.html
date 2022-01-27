@@ -1,50 +1,74 @@
 <template>
-    <div class="container">
-        <div class="btngrp slds-align_absolute-center">
-            <lightning-button-group>
-                <template if:true={running}>
-                    <lightning-button variant="brand" label="Stop" title="Stop" onclick={handleClick} class="slds-m-around_small"></lightning-button>            
-                </template>
-                <template if:false={running}>
-                    <lightning-button variant="brand" label="Start" title="Start" onclick={handleClick} class="slds-m-around_small"></lightning-button>            
-                </template>
-                <template if:true={hide}>
-                    <lightning-button variant="brand" label="Show" title="Show" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
-                </template>
-                <template if:false={hide}>
-                    <lightning-button variant="brand" label="Hide" title="Hide" onclick={handleHideShow} class="slds-m-around_small"></lightning-button>            
-                </template>
-            </lightning-button-group>
-        </div>
-        <div class="clock slds-align_absolute-center">
-            <div class="dial slds-align_absolute-center">
-                <template if:false={hide}>
-                    <img src="./resources/dial.jpg"/>
-                </template>
-            </div>
-            <div class="center"></div>
-            <div class="second-hand">
-                <div class="second-hand-l"></div>
-                <div class="second-hand-dot"></div>
-                <div class="second-hand-r"></div>
-            </div>
-            <div class="min-hand">
-                <div class="min-hand-l"></div>
-                <div class="min-hand-dot"></div>
-                <div class="min-hand-r"></div>
-            </div>
-            <div class="hour-hand">
-                <div class="hour-hand-l"></div>
-                <div class="hour-hand-dot"></div>
-                <div class="hour-hand-r"></div>
-            </div>
-            
-        </div>
-        <div class="time slds-grid slds-align_absolute-center">
-            <div class="hour">{time.h}</div>
-            <div class="min">{time.m}</div>
-            <div class="second">{time.s}</div>
-            <div class="ampm">{time.ampm}</div>
-        </div>
-    </div>
+   <div class="container">
+      <div class="btngrp slds-align_absolute-center">
+         <lightning-button-group>
+            <template if:true={running}>
+               <lightning-button
+                  variant="brand"
+                  label="Stop"
+                  title="Stop"
+                  onclick={handleClick}
+                  class="slds-m-around_small"
+               ></lightning-button>
+            </template>
+            <template if:false={running}>
+               <lightning-button
+                  variant="brand"
+                  label="Start"
+                  title="Start"
+                  onclick={handleClick}
+                  class="slds-m-around_small"
+               ></lightning-button>
+            </template>
+            <template if:true={hide}>
+               <lightning-button
+                  variant="brand"
+                  label="Show"
+                  title="Show"
+                  onclick={handleHideShow}
+                  class="slds-m-around_small"
+               ></lightning-button>
+            </template>
+            <template if:false={hide}>
+               <lightning-button
+                  variant="brand"
+                  label="Hide"
+                  title="Hide"
+                  onclick={handleHideShow}
+                  class="slds-m-around_small"
+               ></lightning-button>
+            </template>
+         </lightning-button-group>
+      </div>
+      <div class="clock slds-align_absolute-center">
+         <div class="dial slds-align_absolute-center">
+            <template if:false={hide}>
+               <img src="./resources/dial.jpg" />
+            </template>
+         </div>
+         <div class="center"></div>
+         <div class="second-hand">
+            <div class="second-hand-l"></div>
+            <div class="second-hand-dot"></div>
+            <div class="second-hand-r"></div>
+         </div>
+         <div class="min-hand">
+            <div class="min-hand-l"></div>
+            <div class="min-hand-dot"></div>
+            <div class="min-hand-r"></div>
+         </div>
+         <div class="hour-hand">
+            <div class="hour-hand-l"></div>
+            <div class="hour-hand-dot"></div>
+            <div class="hour-hand-r"></div>
+         </div>
+      </div>
+      <div class="time slds-grid slds-align_absolute-center">
+         <div class="hour">{time.h}</div>
+         <div class="min">{time.m}</div>
+         <div class="second">{time.s}</div>
+         <div class="ampm">{time.ampm}</div>
+      </div>
+      <div class="footer">{source}</div>
+   </div>
 </template>

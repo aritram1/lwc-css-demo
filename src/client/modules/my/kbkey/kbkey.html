@@ -1,18 +1,20 @@
 <template>
-   <div class="slds-align_absolute-center">
-      <lightning-button
-         variant="brand"
-         label="Show All"
-         title="Show All"
-         onclick={handleClick}
-         class="btn"
-      ></lightning-button>
-   </div>
+   <div class="container">
+      <div class="slds-align_absolute-center">
+         <lightning-button
+            variant="brand"
+            label="Show All"
+            title="Show All"
+            onclick={handleClick}
+            class="hide"
+         ></lightning-button>
+      </div>
 
-   <div class="container slds-grid">
-      <div class="kb center hide">ctrl</div>
-      <div class="kb center">alt</div>
-      <div class="kb center hide">del</div>
+      <div class="slds-grid">
+         <div class="kb center slds-size_1-of-3 hide push300pxdown">ctrl</div>
+         <div class="kb center slds-col slds-size_1-of-3">alt</div>
+         <div class="kb center slds-size_1-of-3 hide push300pxdown">del</div>
+      </div>
+      <div class="footer">{source}</div>
    </div>
-   <div class="footer">{source}</div>
 </template>

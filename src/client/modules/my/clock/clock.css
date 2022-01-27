@@ -17,8 +17,11 @@
 
 * {
   box-sizing: border-box;
-  /* border: 1px solid blue; */
 }
+
+/* .footer{
+  
+} */
 
 .container {
   position: relative;
@@ -142,113 +145,4 @@
   font-size: 30px;
   border-radius: 10px;
   color: rgb(27, 82, 114);
-  /* background: linear-gradient(
-        45deg, 
-        var(--g-start) 0%, 
-        var(--g-mid) 10%, 
-        var(--g-end) 100%
-    ); */
 }
-
-/* ----------------backup-----------------*/
-/* *{
-    margin: 0;
-    padding: 0;   
-}
-
-.btngrp{
-    margin: 20px;
-}
-
-.container{
-    z-index: 10;
-    background-color: white;
-    display: grid;
-    justify-content: center;
-}
-
-.dial{
-    z-index:12;
-}
-
-
-.clock{
-    z-index: 14;
-    --h: 450px;
-    --w : 400px;
-    height: var(--h);
-    height: var(--w);
-    max-height: var(--h);
-    min-height: var(--h);
-    max-width: var(--w);
-    min-width: var(--w); 
-}
-
-.hour{
-    position: absolute;
-    z-index: 16;
-    background-color: none;
-    height: 5px;
-    width: 120px;
-    transform : rotate(30deg);
-}
-
-.hour-left{
-    background-color: grey;
-}
-.hour-dot{
-    background-color: none;
-}
-.hour-right{
-    background-color: none;
-}
-
-.min{
-    position: absolute;
-    z-index: 18;
-    background-color: none;
-    height: 4px;
-    width: 180px;
-    transform : rotate(150deg);
-}
-
-.min-left{
-    background-color: grey;
-}
-.min-dot{
-    background-color: none;
-}
-.min-right{
-    background-color: none;
-}
-
-
-.second{
-    position: absolute;
-    z-index: 20;
-    background-color: none;
-    height: 3px;
-    width:220px;
-    transform : rotate(270deg);
-}
-
-.second-left{
-    background-color: grey;
-}
-.second-dot{
-    background-color: none;
-}
-.second-right{
-    background-color: none;
-}
-
-.hands{
-    z-index: 100;
-    position: relative;
-    background-color: grey;
-    height: 16px;
-    width: 16px;
-    border-radius: 100%;
-    left: 192px;
-    top: 200px;
-}  */

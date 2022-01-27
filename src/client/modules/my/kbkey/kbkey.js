@@ -1,9 +1,20 @@
 import { LightningElement, api } from 'lwc';
-export default class Clock extends LightningElement {
+export default class KBkey extends LightningElement {
    connectedCallback() {}
-   @api source;
+   @api source; // To refer jsfiddle link if any
 
-   handleClick() {
+   handleClick(e) {
+      switch (e.target.label) {
+         case 'Show All':
+            e.target.label = 'Show 1';
+            break;
+         case 'Show 1':
+            e.target.label = 'Show All';
+            break;
+         default:
+            console.log('Default : ' + e.target.label);
+            break;
+      }
       this.template
          .querySelector('.container>div:first-child')
          .classList.toggle('hide');
