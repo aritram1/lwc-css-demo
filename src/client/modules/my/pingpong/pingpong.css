@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  --height-container: 400rem;
+  --width-container: 600px;
+  --clr-ball: red;
+  --clr-board: green;
+}
+
+.container {
+  height: var(--height-container);
+  width: var(--width-container);
+  margin: ;
+}
+
+.hide {
+  display: none;
+}
+
+.ball {
+  background: var(--clr-ball);
+}
+.board {
+  background: var(--clr-board);
+}
+
+.footer {
+  font-family: monospace;
+  font-size: 1rem;
+  color: black;
+}
