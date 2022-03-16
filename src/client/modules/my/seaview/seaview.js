@@ -1,19 +1,28 @@
 /* eslint-disable radix */
 import { LightningElement, api } from 'lwc';
 export default class Seaview extends LightningElement {
-   stopBtn = this.template.querySelector('#btn1');
-   eyes = this.template.querySelectorAll('.eye');
-   // boats = this.template.querySelectorAll('.boat');
-   startBtn = this.template.querySelector('#btn');
    x = 5;
    y = -5;
    dx = 1;
    dy = -1;
-   timerId;
-   @api source; // To refer jsfiddle link if any
+   timerId = '';
+   containerSizeInPixel = 800; //800px is container size
+   @api source; // To link original jsfiddle, if any
+   controllers;
 
+   get btnName() {
+      return this.running ? 'Stop' : 'Start';
+   }
+   get running() {
+      return this.timerId !== '';
+   }
    connectedCallback() {
-      setInterval(() => {
+      console.log('calling connectedcallback');
+      this.startScene();
+   }
+
+   startScene() {
+      this.timerId = setInterval(() => {
          let boats = this.template.querySelectorAll('.boat');
          boats.forEach((boat) => {
             let boatLeft = parseInt(
@@ -22,12 +31,7 @@ export default class Seaview extends LightningElement {
             let boatWidth = parseInt(
                window.getComputedStyle(boat).width.split('px')[0]
             );
-            console.log('boatLeft' + boatLeft);
-            console.log('boatWidth' + boatWidth);
-            console.log('window.innerWidth->' + window.innerWidth);
-
-            if (boatLeft + boatWidth < 800) {
-               //800px is container size
+            if (boatLeft + boatWidth < this.containerSizeInPixel) {
                boatLeft += 1;
             } else {
                boatLeft = 0;
@@ -35,5 +39,37 @@ export default class Seaview extends LightningElement {
             boat.style.left = `${boatLeft}px`;
          });
       }, 100);
+   }
+
+   stopScene() {
+      if (this.timerId) {
+         clearInterval(this.timerId);
+         this.timerId = '';
+      }
+   }
+
+   renderedCallback() {
+      console.log('Inside renderedcallback');
+   }
+
+   handleClick(e) {
+      console.log(`${e.target.value} button clicked!`);
+      switch (e.target.value) {
+         case 'Start':
+            e.target.value = 'Stop';
+            this.startScene();
+            break;
+         case 'Stop':
+            e.target.value = 'Start';
+            this.stopScene();
+            break;
+         default:
+            break;
+      }
+   }
+
+   disconnectedCallback() {
+      console.log('inside disconnectedcallback');
+      this.stopScene();
    }
 }

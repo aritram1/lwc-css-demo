@@ -1,17 +1,12 @@
 <template>
    <div class="container">
       <div class="controls">
-         <input type="button" id="btn" value="Idhar udhar dekho" />
-         <input type="button" id="btn1" value="Idhar udhar mat dekho" />
+         <input type="button" id="btn" value={btnName} onclick={handleClick} />
       </div>
       <div class="scene">
-         <!-- <div class="eye"></div> -->
-         <!-- <div class="eye"></div> -->
          <div class="sun"></div>
          <div class="boat cruiser"></div>
-         <div class="boat tanker hide">T</div>
-         <!-- <div class="boat sailboat">S</div> -->
       </div>
-      <div class="footer">{source}</div>
+      <div class="footer">🍉 {source}</div>
    </div>
 </template>

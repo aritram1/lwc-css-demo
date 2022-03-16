@@ -61,7 +61,7 @@
     #ffc000 95%
   );
 
-  position: absolute;
+  position: relative;
   width: var(--width-scene);
   height: var(--height-scene);
   /* box-shadow: 50px 10px 100px 2px seagreen, -50px 10px 100px 2px skyblue; */
@@ -71,9 +71,9 @@
 }
 
 .controls {
-  display: none;
-  gap: 10px;
-  margin: 20px 80px;
+  position: relative;
+  left: 20px;
+  top: 10px;
 }
 
 .sun {
@@ -172,21 +172,6 @@
 .hide {
   display: none;
 }
-/*
-
-.eye {
-  left: 40%;
-  top: 10%;
-  position: relative;
-  background: grey;
-  height: 40px;
-  width: 40px;
-  border-radius: 90%;
-  z-index: 10;
-  box-shadow: 5px -5px 0px 6px silver;
-}
-
-*/
 
 .sailboat {
   left: 10px;
@@ -226,4 +211,11 @@
   border-bottom: 10px solid green;
   border-left: 10px solid yellow;
   border-radius: 0%;
+}
+
+.footer {
+  position: relative;
+  font-family: monospace;
+  margin: 5px;
+  left: 10px;
 }

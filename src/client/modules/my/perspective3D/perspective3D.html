@@ -1,24 +1,144 @@
 <template>
-   <div class="infoPanel">Perspective : 200px Shadow : none</div>
+   <div class="infoPanel"></div>
    <div class="btns">
-      <input type="button" value="Increase Spread" />
-      <input type="button" value="Decrease Spread" />
+      <input
+         type="button"
+         data-label="Increase Spread"
+         value={str_Spread}
+         onclick={handleClick}
+         disabled
+      />
+      <input
+         type="button"
+         data-label="Spread Increase"
+         value="More ⬆"
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Spread Decrease"
+         value="Less ⬇"
+         onclick={handleClick}
+      />
+      <br />
+      <input
+         type="button"
+         data-label="Perspective"
+         value={str_Perspective}
+         onclick={handleClick}
+         disabled
+      />
+      <input
+         type="button"
+         data-label="Increase Perspective"
+         value="More ⬆"
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Decrease Perspective"
+         value="Less ⬇"
+         onclick={handleClick}
+      />
+      <!-- <input
+         type="button"
+         data-label="Increase Perspective"
+         value={str_perspectiveIncrease}
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Decrease Perspective"
+         value={str_perspectiveDecrease}
+         onclick={handleClick}
+      />-->
    </div>
    <div class="btns">
-      <input type="button" value="Reset" />
-      <input type="button" value="Rotate X+" />
-      <input type="button" value="Rotate X-" />
-      <input type="button" value="Rotate Y+" />
-      <input type="button" value="Rotate Y-" />
-      <input type="button" value="Rotate Z+" />
-      <input type="button" value="Rotate Z-" />
+      <input
+         type="button"
+         data-label="X"
+         value={str_rotationX}
+         onclick={handleClick}
+         disabled
+      />
+      <input
+         type="button"
+         data-label="Rotate X+"
+         value="CW ↩"
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Rotate X-"
+         value="CCW ↪"
+         onclick={handleClick}
+      />
+      <!-- <input
+         type="button"
+         data-label="Rotate X+"
+         value={str_xClockWise}
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Rotate X-"
+         value={str_xAntiClockWise}
+         onclick={handleClick}
+      /> -->
    </div>
    <div class="btns">
-      <input type="button" value="Increase Perspective" />
-      <input type="button" value="Decrease Perspective" />
+      <input
+         type="button"
+         data-label="Y"
+         value={str_rotationY}
+         onclick={handleClick}
+         disabled
+      />
+      <input
+         type="button"
+         data-label="Rotate Y+"
+         value="CW ↩"
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Rotate Y-"
+         value="CCW ↪"
+         onclick={handleClick}
+      />
+   </div>
+   <div class="btns">
+      <input
+         type="button"
+         data-label="Z"
+         value={str_rotationZ}
+         onclick={handleClick}
+         disabled
+      />
+      <input
+         type="button"
+         data-label="Rotate Z+"
+         value="CW ↩"
+         onclick={handleClick}
+      />
+      <input
+         type="button"
+         data-label="Rotate Z-"
+         value="CCW ↪"
+         onclick={handleClick}
+      />
+   </div>
+
+   <div class="btns">
+      <input
+         type="button"
+         data-label="Reset"
+         value="Reset"
+         onclick={handleClick}
+      />
    </div>
    <div class="container">
-      <div class="box" />
+      <div class="box"></div>
    </div>
-   <div class="source">https://jsfiddle.net/aritram1/vtdqjn1a/305/</div>
+   <div class="footer">🍉 {source}/</div>
 </template>

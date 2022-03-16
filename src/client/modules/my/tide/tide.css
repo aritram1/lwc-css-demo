@@ -1,0 +1,61 @@
+html {
+  --c: red;
+}
+
+.container {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  /* margin: 10px none; */
+  background: linear-gradient(grey, lightgrey);
+  background: url("https://img2.exportersindia.com/product_images/bc-full/2019/10/6502664/tide-detergent-powder-1570253728-5105734.jpeg");
+  background-repeat: no-repeat;
+  background-size: 120% 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.scene {
+  position: absolute;
+  top: 33%;
+  left: 0px;
+  height: 70px;
+  width: 50px;
+  margin: 0px auto;
+  background: white;
+  animation: tide 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes tide {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+input[type="button"] {
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px 0 black;
+  font-family: monospace;
+}
+
+.banner {
+  animation: show 1s 1;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 60px;
+  top: 100px;
+}
+
+@keyframes show {
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,26 +1,3 @@
 <template>
-    <div class="container">
-        <div class="slds-box">
-            <lightning-combobox
-                name='selection'
-                label='Select one'
-                value={value}
-                placeholder='Select one'
-                options={options}
-                onchange={handleChange}>
-            </lightning-combobox>
-            <p>
-                <lightning-formatted-date-time value={now} hour='2-digit' minute='2-digit' second='2-digit' hour12='false'>
-                </lightning-formatted-date-time>
-            </p>
-            <lightning-button-group>
-                <template if:true={showStart}>
-                    <lightning-button label='Start' onclick={handleStartFinish}></lightning-button>
-                </template>
-                <template if:true={showFinish}>
-                    <lightning-button label='Finish' onclick={handleStartFinish}></lightning-button>
-                </template>
-            </lightning-button-group>
-        </div>
-    </div>
+   <div class="container"></div>
 </template>
