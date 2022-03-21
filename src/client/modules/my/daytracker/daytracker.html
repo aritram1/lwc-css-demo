@@ -1,3 +1,83 @@
 <template>
-   <div class="container"></div>
+   <div class="container">
+      <div class="slds-grid header">
+         <div class="left slds-col slds-size_9-of-12 slds-grid">
+            <div class="logo slds-col slds-var-p-around_medium">LOGO</div>
+            <div class="appname slds-col slds-var-p-around_medium">
+               Activity Tracker
+            </div>
+         </div>
+         <div
+            class="right slds-col slds-size_3-of-12 slds-align_absolute-center"
+         >
+            <div class="time slds-var-p-around_medium">{currentTime}</div>
+         </div>
+      </div>
+      <div class="scroller up" onclick={handleScroll}></div>
+      <div class="dailyactivities">
+         <template for:each={dailyActivities} for:item="dac">
+            <div key={dac.Id} class="activities daily slds-grid">
+               <div class="slds-col slds-size_4-of-12 slds-var-p-around_medium">
+                  {dac.start}-{dac.finish}
+               </div>
+               <div class="slds-col slds-size_6-of-12 slds-var-p-around_medium">
+                  {dac.name}
+               </div>
+               <div class="slds-col slds-var-m-around_medium">
+                  <lightning-button
+                     variant="brand"
+                     label="Complete"
+                     title="Complete"
+                     onclick={handleDailyActivityComplete}
+                     data-actid={dac.Id}
+                  ></lightning-button>
+               </div>
+            </div>
+         </template>
+      </div>
+      <div class="scroller down" onclick={handleScroll}></div>
+      <div class="fillerwork slds-grid-vertical">
+         <div class="slds-col slds-var-p-around_medium">
+            <lightning-combobox
+               name="Filler works"
+               label="Filler works"
+               value={fillerWorkSelectedValue}
+               placeholder="Select work to start"
+               options={fillerWorkTypes}
+               onchange={handleFillerWorkChange}
+            >
+            </lightning-combobox>
+         </div>
+         <div class="slds-col slds-var-p-around_medium">
+            <lightning-button
+               variant="brand"
+               label="Start"
+               title="Start"
+               onclick={handleStartFillerWork}
+            ></lightning-button>
+         </div>
+      </div>
+      <div class="currentactivities">
+         <template for:each={currentActivities} for:item="cac">
+            <div key={cac.Id} class="activities current slds-grid">
+               <div class="slds-col slds-size_4-of-12 slds-var-p-around_medium">
+                  {cac.timeElapsed}m
+               </div>
+               <div class="slds-col slds-size_6-of-12 slds-var-p-around_medium">
+                  {cac.name}
+               </div>
+               <div class="slds-col slds-var-p-around_medium">
+                  <lightning-button
+                     variant="brand"
+                     label="Complete"
+                     title="Complete"
+                     data-actid={cac.Id}
+                     onclick={handleCompleteCurrentActivity}
+                  ></lightning-button>
+               </div>
+            </div>
+         </template>
+      </div>
+      <a href={source}>🍉 {source}</a>
+   </div>
 </template>

@@ -4,12 +4,13 @@ html {
 
 .container {
   position: relative;
-  width: 250px;
+  width: 300px;
   height: 300px;
   /* margin: 10px none; */
   background: linear-gradient(grey, lightgrey);
   background: url("https://img2.exportersindia.com/product_images/bc-full/2019/10/6502664/tide-detergent-powder-1570253728-5105734.jpeg");
-  background-repeat: no-repeat;
+  background-repeat: stretch;
+  /* no-repeat; */
   background-size: 120% 300px;
   text-align: center;
   border-radius: 10px;
