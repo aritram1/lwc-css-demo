@@ -1,6 +1,6 @@
 # daytracker
 
-Here will be some information about the app. Watch it live here https://aritram1.github.io/lwcoss-day-tracker/
+Here will be some information about the app. Watch it live here https://aritram1.github.io/lwc-css-demo/
 
 ## How to start?
 
